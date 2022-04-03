@@ -83,7 +83,7 @@ class Rotinas:
 
         try:
             conexao = mysql.connector.connect(
-                host='localhost', database='db_Cadastro', user='root', password='cd@D2608')
+                host='localhost', database='db_Cadastro', user='root', password='')
 
             # Se a conexão foi realizada, realizar consulta SQL.
             if conexao.is_connected():
@@ -133,7 +133,7 @@ class Rotinas:
         comando = declaracao + dados
         try:
             conexao = mysql.connector.connect(
-                host='localhost', database='db_Cadastro', user='root', password='cd@D2608')
+                host='localhost', database='db_Cadastro', user='root', password='')
 
             #inserir_cadastro = comando
             cursor = conexao.cursor()
