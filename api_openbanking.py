@@ -35,8 +35,8 @@ class Openbanking:
                     aux = 0
                     for i in lista['businessFinancings']:
                         if lista['businessFinancings'][aux]['interestRates'][0]['referentialRateIndexer'] == 'PRE_FIXADO':
-                            lista_servicos[n_servicos] = [instituicao, [lista['businessFinancings'][aux]['type']], [
-                                lista['businessFinancings'][aux]['interestRates'][0]['maximumRate']]]
+                            lista_servicos[n_servicos] = {'instituicao': instituicao, 'servico': lista['businessFinancings'][aux]['type'],
+                                                          'taxa': lista['businessFinancings'][aux]['interestRates'][0]['maximumRate']}
                             n_servicos += 1
                         aux += 1
             except:
@@ -47,6 +47,24 @@ class Openbanking:
     # Desenvolver def de consulta de dados de clientes (necessita credenciais do Banco Safra + autorização do cliente)
     # def info_cliente():
 
+
+    #Função que ordena as taxas na ordem crescente
+    def menor_taxa(lista_servicos):
+        ordenado = sorted(lista_servicos, key=lambda servico: lista_servicos[servico]['taxa'])
+
+        for i in ordenado:
+            lista_taxas = lista_taxas.append(lista_servicos[i])
+
+        return lista_taxas
+
+    def Filtro_servico(Tipo_servico):
+        nome_servico = Tipo_servico
+        for i in lista_servicos:
+            if lista_servicos[i]['servico'] == nome_servico:
+                lista_taxas = lista_taxas.append(lista_servicos[i])
+
+    # Desenvolver ordem de exposição de taxas personalizadas conforme perfil do cliente
+    # def info_cliente():
 
 class Rotinas:
 
@@ -59,25 +77,36 @@ class Rotinas:
         return simulador
 
      # Função login
-    def login(login, senha):
+    def login(login, senha, status):
         import mysql.connector
+        from mysql.connector import Error
 
-        conexao = mysql.connector.connect(
-            host='localhost', database='db_Cadastro', user='root', password='')
+        try:
+            conexao = mysql.connector.connect(
+                host='localhost', database='db_Cadastro', user='root', password='cd@D2608')
 
-        if conexao.is_connected():
-            db_info = conexao.get_server_info()
-            cursor = conexao.cursor()
-            cursor.execute("select ")
+            # Se a conexão foi realizada, realizar consulta SQL.
+            if conexao.is_connected():
+                comando = "SELECT * FROM tbl_user WHERE email = '{}'".format(
+                    login)
+                cursor = conexao.cursor()
+                cursor.execute(comando)
+                dados_cliente = cursor.fetchall()
 
-        # Desativa a conexão com a base de dados após uso.
-        if conexao.is_connected():
-            cursor.close()
-            conexao.close()
+        except:
+            pass
+        finally:
+            # Desativa a conexão com a base de dados após uso.
+            if conexao.is_connected():
+                cursor.close()
+                conexao.close()
 
-        return(dados_cliente)
-            
+        if dados_cliente[4] == senha:
+            status = True
+        return dados_cliente
+
     # Função adiciona cadastro de novo usuário em base de dados
+
     def cadastro():
         import mysql.connector
         from mysql.connector import Error
@@ -104,11 +133,11 @@ class Rotinas:
         comando = declaracao + dados
         try:
             conexao = mysql.connector.connect(
-                host='localhost', database='db_Cadastro', user='root', password='')
+                host='localhost', database='db_Cadastro', user='root', password='cd@D2608')
 
-            inserir_cadastro = comando
+            #inserir_cadastro = comando
             cursor = conexao.cursor()
-            cursor.execute(inserir_cadastro)
+            cursor.execute(comando)
 
             # Desativa a conexão com a base de dados após uso.
             conexao.commit()
