@@ -51,4 +51,4 @@ Gallileu Genesis/
 ## Desenvolvedores:
 André Tsuji/
 Gabriel Veronezzi/
-Leo Carvalho
+Leonardo Carvalho
