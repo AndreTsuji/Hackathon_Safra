@@ -47,9 +47,8 @@ Cleyson Teixeira/
 Daniel Rezende/
 Gabriel P. Assis/
 Gallileu Genesis/
-Leo Carvalho
-
 
 ## Desenvolvedores:
 André Tsuji/
-Gabriel Veronezzi
+Gabriel Veronezzi/
+Leo Carvalho
