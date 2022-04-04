@@ -3,6 +3,11 @@
 
 Desenvolvimento de um app (marca desvinculada do banco safra) focado no microempreendedor e pequenas empresas que compare os cenários de aquisição de crédito na principais instituições financeiras do país e apresente para o usuário as melhores opções de crédito com as menores taxas do mercado.
 
+
+![login_page](https://user-images.githubusercontent.com/95044193/161455093-40a72c77-b6ac-4c97-8518-665cb3023173.png)
+![calc_page](https://user-images.githubusercontent.com/95044193/161454506-bbd658a4-2bc6-4c4b-a6cc-b10ca7dab123.png)
+![simulate_page](https://user-images.githubusercontent.com/95044193/161454623-948b5ede-d1a4-4c68-a6ae-30940e307bbf.png)
+  
 ## Porque o projeto é útil
 
 Para ter acesso à facilidade proporcionada pelo app em encontrar as melhores ofertas de crédito, o usuário deve aceitar o termo de compartilhamentos de dados bancários do OpenBanking. O Safra então terá acesso aos dados de clientes das mais variadas instituições financeiras do país, permitindo por exemplo:
