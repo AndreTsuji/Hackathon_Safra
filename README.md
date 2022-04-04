@@ -1,7 +1,7 @@
 # Hackathon_Safra
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
-Desenvolvimento de um app (marca desvinculada do banco safra) focado no microempreendedor e pequenas empresas que compare os cenários de aquisição de crédito na principais instituições financeiras do país e apresente para o usuário as melhores opções de crédito com as menores taxas do mercado.
+Desenvolvimento de um app (startup do Banco Safra) focado no microempreendedor e pequenas empresas que compare os cenários de aquisição de crédito na principais instituições financeiras do país e apresente para o usuário as melhores opções de crédito com as menores taxas do mercado.
 
 
 ![login_page](https://user-images.githubusercontent.com/95044193/161455093-40a72c77-b6ac-4c97-8518-665cb3023173.png)
